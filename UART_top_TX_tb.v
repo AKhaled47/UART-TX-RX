@@ -13,13 +13,14 @@ forever #2 clk=~clk;
 end
 
 initial begin
+$monitor("Time is %3d , tx_out is %b , tx_done is %b",$time,tx_out,tx_done);
 rst_n=1'b0;
 tx_start=1'b0;
 d_in=8'b10101010;
 dvsr=11'd2;
 #10 rst_n=1'b1;
 tx_start=1'b1;
-$monitor("Time is %3d , tx_out is %b , tx_done is %b",$time,tx_out,tx_done);
+
 
 
 
